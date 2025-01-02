@@ -1,5 +1,7 @@
 # Android device tree for Samsung Galaxy Tab S9 (gts9p)
 
+# Credit to @rainbowdashh
+
 Kernel source for the prebuilt image [HERE](https://github.com/rainbowdashh/android_kernel_samsung_sm8550-q5q)
 
 ```
