@@ -4,20 +4,17 @@
         manifest_launched_with_T.xml
         manifest.xml
         manifest.xml
-        manifest.xml
-        manifest.xml
         face-default-sec.xml
         rkp_skeymint_v200_manifest.xml
         strongbox_km_v40_manifest.xml
-        manifest.xml
-        manifest.xml
+        gatekeeper_manifest.xml
         manifest.xml
         manifest.xml
         manifest.xml
         manifest.xml
         manifest.xml
 -->
-<manifest version="1.0" type="device" target-level="7">
+<manifest version="4.0" type="device" target-level="7">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -58,7 +55,7 @@
         <transport>hwbinder</transport>
         <fqname>@2.7::ICameraProvider/external/0</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="hidl" override="true">
         <name>android.hardware.gatekeeper</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -98,16 +95,6 @@
         <transport>hwbinder</transport>
         <fqname>@1.2::ISap/slot1</fqname>
         <fqname>@1.2::ISap/slot2</fqname>
-    </hal>
-    <hal format="hidl" override="true">
-        <name>android.hardware.secure_element</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>ISecureElement</name>
-            <instance>eSE1</instance>
-        </interface>
-        <fqname>@1.2::ISecureElement/eSE1</fqname>
     </hal>
     <hal format="aidl" override="true">
         <name>android.hardware.security.keymint</name>
@@ -455,16 +442,6 @@
         <fqname>@1.0::ISehHdcpKeyProvisioning/default</fqname>
     </hal>
     <hal format="hidl" override="true">
-        <name>vendor.samsung.hardware.security.sem</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehSem</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehSem/default</fqname>
-    </hal>
-    <hal format="hidl" override="true">
         <name>vendor.samsung.hardware.security.skpm</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -473,26 +450,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::ISehSkpm/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.tlc.blockchain</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehBlockchain</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehBlockchain/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.tlc.payment</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehTlcPayment</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehTlcPayment/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.tlc.ucm</name>
