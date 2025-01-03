@@ -3,10 +3,10 @@ name: TWRP
 on:
   push:
     branches:
-      - 'twrp-12.1'
+      - 'android-12.1'
 
     paths:
-      - 'version.mk'
+      - 'boardconfig.mk'
 
 jobs:
   build:
@@ -65,7 +65,7 @@ jobs:
     - name: Clone Device Tree
       run: |
         cd twrp
-        git clone https://github.com/TNDRP/android_device_samsung_gts9p.git -b twrp-12.1 ./device/samsung/gts9p
+        git clone https://github.com/TNDRP/android_device_samsung_gts9p.git -b android-12.1 ./device/samsung/gts9p
         cd device/samsung/gts9p
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
         echo "VERSION=$(cat version.mk | grep '^TW_DEVICE_VERSION' | awk '{print $3}')" >> $GITHUB_ENV
